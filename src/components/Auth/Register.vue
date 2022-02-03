@@ -24,14 +24,17 @@
                     <div class="row">
                       <div class="col-md-6 form-group">
                         <input v-model="form.name" type="text" class="form-control" placeholder="Your Name*">
+                        <label v-if="errors.name">{{ errors.name.toString() }}</label>
                       </div>
                       <div class="col-md-6 form-group">
                         <input v-model="form.email" type="email" class="form-control" placeholder="Your Email*">
+                        <label v-if="errors.email">{{ errors.email.toString() }}</label>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col form-group">
                         <input v-model="form.password" type="password" class="form-control" placeholder="Password*">
+                        <label v-if="errors.password">{{ errors.password.toString() }}</label>
                       </div>
                     </div>
                     <div class="row">
@@ -42,6 +45,7 @@
                     <div class="row">
                       <div class="col form-group">
                         <input v-model="form.phone_number" type="text" class="form-control" placeholder="Phone Number">
+                        <label v-if="errors.phone_number">{{ errors.phone_number.toString() }}</label>
                       </div>
                     </div>
                     <div class="row">
@@ -66,6 +70,9 @@
 </template>
 
 <script>
+import axios from 'axios'
+import router from '../../router.js'
+
 export default {
   name: "Register",
 
@@ -74,22 +81,51 @@ export default {
       form: {
         name: '',
         email: '',
-        password: '',
-        password_confirmation: '',
+        password: null,
+        password_confirmation: null,
         phone_number: '',
         terms: false,
-      }
+      },
+      errors: {},
     }
   },
 
   methods: {
     submitForm() {
-      this.$toaster.success('Submitting a form...')
+      if(!this.form.terms)
+        return this.$toaster.error('Please accept the terms & rules.')
+
+      axios.post('http://127.0.0.1:8000/api/user/register', this.form)
+        .then((response) => {
+
+          // Clear the forms & errors
+          this.form = {
+            name: '',
+            email: '',
+            password: null,
+            password_confirmation: null,
+            phone_number: '',
+            terms: false,
+          }
+          this.errors = {}
+
+          // Flash a successful message returned from the API
+          this.$toaster.success(response.data.message)
+
+          // Redirect to login page after 1 second.
+          setTimeout(function() {
+            router.push({name: 'login'})
+          }, 1000)
+        })
+        .catch((error) => {
+          if(error.response.status === 422)
+            // Fulfil the errors object
+            this.errors = error.response.data.errors || {}
+          else
+            // Otherwise just show the response error message
+            this.$toaster.error(error.response.statusText)
+        })
     }
   }
 }
 </script>
-
-<style scoped>
-
-</style>
