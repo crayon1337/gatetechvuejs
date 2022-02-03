@@ -3,8 +3,8 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero">
       <div class="hero-container">
-        <h3>Welcome to <strong>Tempo</strong></h3>
-        <h1>We're Creative Agency</h1>
+        <h3>Welcome to <strong>Gatetechs</strong></h3>
+        <h1>We're news platform</h1>
         <h2>We are team of talented designers making websites with Bootstrap</h2>
         <a href="#about" class="btn-get-started scrollto">Get Started</a>
       </div>
@@ -48,15 +48,16 @@
       </section><!-- End About Section -->
 
       <!-- ======= Services Section ======= -->
-      <section id="services" class="services">
+      <section id="categories" class="services">
         <div class="container">
 
           <div class="section-title">
-            <h2>Services</h2>
-            <h3>We do offer awesome <span>Services</span></h3>
-            <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+            <h2>Categories</h2>
+            <h3>We do offer awesome <span>categories</span></h3>
+            <p>We have a lot to discuss so we are separating our articles into categories</p>
           </div>
 
+          <!-- TODO: Add categories here -->
           <div class="row">
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
               <div class="icon-box">
@@ -103,7 +104,7 @@
             <div class="col-lg-3 col-md-4 col-6 col-6">
               <div class="icon-box">
                 <i class="ri-store-line" style="color: #ffbb2c;"></i>
-                <h3><a href="">Lorem Ipsum</a></h3>
+                <h3><a href="">Fast</a></h3>
               </div>
             </div>
             <div class="col-lg-3 col-md-4 col-6">
@@ -191,12 +192,12 @@
       </section><!-- End Cta Section -->
 
       <!-- ======= Portfolio Section ======= -->
-      <section id="portfolio" class="portfolio">
+      <section id="posts" class="portfolio">
         <div class="container">
 
           <div class="section-title">
-            <h2>Portfolio</h2>
-            <h3>Check our <span>Portfolio</span></h3>
+            <h2>Posts</h2>
+            <h3>Check our <span>Posts</span></h3>
             <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
           </div>
 
@@ -211,6 +212,7 @@
             </div>
           </div>
 
+          <!-- TODO: Add recent posts here -->
           <div class="row portfolio-container">
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
@@ -308,155 +310,18 @@
         </div>
       </section><!-- End Portfolio Section -->
 
-      <!-- ======= Pricing Section ======= -->
-      <section id="pricing" class="pricing">
+
+      <!-- ======= Members Section ======= -->
+      <section id="members" class="team">
         <div class="container">
 
           <div class="section-title">
-            <h2>Pricing</h2>
-            <h3>Our Competing <span>Prices</span></h3>
+            <h2>Members</h2>
+            <h3>Our Hardworking <span>Members</span></h3>
             <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
           </div>
 
-          <div class="row">
-
-            <div class="col-lg-4 col-md-6">
-              <div class="box">
-                <h3>Free</h3>
-                <h4><sup>$</sup>0<span> / month</span></h4>
-                <ul>
-                  <li>Aida dere</li>
-                  <li>Nec feugiat nisl</li>
-                  <li>Nulla at volutpat dola</li>
-                  <li class="na">Pharetra massa</li>
-                  <li class="na">Massa ultricies mi</li>
-                </ul>
-                <div class="btn-wrap">
-                  <a href="#" class="btn-buy">Buy Now</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
-              <div class="box recommended">
-                <span class="recommended-badge">Recommended</span>
-                <h3>Business</h3>
-                <h4><sup>$</sup>19<span> / month</span></h4>
-                <ul>
-                  <li>Aida dere</li>
-                  <li>Nec feugiat nisl</li>
-                  <li>Nulla at volutpat dola</li>
-                  <li>Pharetra massa</li>
-                  <li class="na">Massa ultricies mi</li>
-                </ul>
-                <div class="btn-wrap">
-                  <a href="#" class="btn-buy">Buy Now</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
-              <div class="box">
-                <h3>Developer</h3>
-                <h4><sup>$</sup>29<span> / month</span></h4>
-                <ul>
-                  <li>Aida dere</li>
-                  <li>Nec feugiat nisl</li>
-                  <li>Nulla at volutpat dola</li>
-                  <li>Pharetra massa</li>
-                  <li>Massa ultricies mi</li>
-                </ul>
-                <div class="btn-wrap">
-                  <a href="#" class="btn-buy">Buy Now</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section><!-- End Pricing Section -->
-
-      <!-- ======= F.A.Q Section ======= -->
-      <section id="faq" class="faq">
-        <div class="container">
-
-          <div class="section-title">
-            <h2>F.A.Q</h2>
-            <h3>Frequently Asked <span>Questions</span></h3>
-          </div>
-
-          <ul class="faq-list">
-
-            <li>
-              <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-              <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                </p>
-              </div>
-            </li>
-
-            <li>
-              <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-              <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </p>
-              </div>
-            </li>
-
-            <li>
-              <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-              <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                </p>
-              </div>
-            </li>
-
-            <li>
-              <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-              <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </p>
-              </div>
-            </li>
-
-            <li>
-              <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-              <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-                </p>
-              </div>
-            </li>
-
-            <li>
-              <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-              <div id="faq6" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section><!-- End F.A.Q Section -->
-
-      <!-- ======= Team Section ======= -->
-      <section id="team" class="team">
-        <div class="container">
-
-          <div class="section-title">
-            <h2>Team</h2>
-            <h3>Our Hardworking <span>Team</span></h3>
-            <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
-          </div>
-
+          <!-- TODO: Add Members here -->
           <div class="row">
 
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
