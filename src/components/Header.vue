@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top " v-bind:class="{headerScrolled: scrollPosition > 100}">
+    <header id="header" class="fixed-top header-inner-pages">
       <div class="container d-flex align-items-center justify-content-between">
 
         <h1 class="logo"><a href="index.html">Gatetechs</a></h1>
@@ -10,12 +10,14 @@
 
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <router-link class="nav-link" :to="{name: 'home'}" active-class="active">Home</router-link>
             <li><a class="nav-link scrollto" href="#about">About</a></li>
             <li><a class="nav-link scrollto" href="#categories">Categories</a></li>
             <li><a class="nav-link scrollto " href="#posts">Posts</a></li>
             <li><a class="nav-link scrollto " href="#members">Members</a></li>
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <router-link class="nav-link" :to="{name: 'login'}" active-class="active">Login</router-link>
+            <router-link class="nav-link" :to="{name: 'register'}" active-class="active">Register</router-link>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -28,21 +30,6 @@
 <script>
 export default {
   name: "Header",
-
-  data: function () {
-    return {
-      scrollPosition: null
-    };
-  },
-
-  methods: {
-    updateScroll() {
-      this.scrollPosition = window.scrollY
-    }
-  },
-  mounted() {
-    window.addEventListener('scroll', this.updateScroll);
-  }
 }
 </script>
 
