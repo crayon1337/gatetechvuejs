@@ -75,8 +75,8 @@ export default new Router({
             component: AdminPosts
         },
         {
-            path: 'admin/posts/create',
-            name: 'admin.posts.create',
+            path: 'posts/create',
+            name: 'posts.create',
             component: CreatePost,
         },
         {

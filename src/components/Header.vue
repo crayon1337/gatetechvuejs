@@ -17,6 +17,7 @@
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
             <router-link class="nav-link" :to="{name: 'login'}" active-class="active" v-if="!this.$store.getters['0/authenticated']">Login</router-link>
             <router-link class="nav-link" :to="{name: 'register'}" active-class="active" v-if="!this.$store.getters['0/authenticated']">Register</router-link>
+            <router-link class="nav-link" :to="{name: 'posts.create'}" active-class="active" v-if="this.$store.getters['0/authenticated']">Create Post</router-link>
             <router-link class="nav-link" :to="{name: 'settings'}" active-class="active" v-if="this.$store.getters['0/authenticated']">Settings</router-link>
             <li class="dropdown" v-if="this.$store.getters['0/authenticated'] && this.$store.getters['0/user'].isAdmin"><a href="#"><span>Dashboard</span> <i class="bi bi-chevron-down"></i></a>
               <ul>

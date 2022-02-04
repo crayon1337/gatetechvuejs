@@ -107,7 +107,7 @@ export default {
         }
       }).post('http://127.0.0.1:8000/api/post', this.form).then(({data}) => {
         this.$toaster.success(data.message)
-        router.push({name: 'admin.posts'})
+        router.push({name: 'home'})
       }).catch((error) => {
         if(error.response.status === 422)
           this.errors = error.response.data.errors

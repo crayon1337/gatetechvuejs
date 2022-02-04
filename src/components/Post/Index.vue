@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="row">
     <div class="col-lg-3 col-md-6" v-for="post in posts" :key="post.id">
       <div class="member">
         <div class="member-img">

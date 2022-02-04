@@ -13,7 +13,7 @@
               <div class="blog-comments">
                 <div class="reply-form">
                   <h4>Posts</h4>
-                  <router-link :to="{name: 'admin.posts.create'}" class="btn btn-primary">Add</router-link>
+                  <router-link :to="{name: 'posts.create'}" class="btn btn-primary">Add</router-link>
                   <table class="table">
                     <thead>
                     <tr>
