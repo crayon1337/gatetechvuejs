@@ -83,7 +83,7 @@ export default {
         }
       }).delete('http://127.0.0.1:8000/api/category/' + slug).then(({data}) => {
         this.$toaster.success(data.message)
-        this.loadUsers()
+        this.Categories()
       }).catch((error) => {
         this.$toaster.error(error.response.statusText)
       })

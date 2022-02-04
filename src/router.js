@@ -11,6 +11,8 @@ import AdminCategories from '@/components/Dashboard/Categories/Index';
 import CreateCategory from '@/components/Dashboard/Categories/Create';
 import UpdateCategory from '@/components/Dashboard/Categories/Update';
 import AdminPosts from '@/components/Dashboard/Posts/Index';
+import CreatePost from '@/components/Dashboard/Posts/Create';
+import UpdatePost from '@/components/Dashboard/Posts/Update';
 import NotFound from "@/components/Misc/NotFound";
 
 Vue.use(Router)
@@ -33,7 +35,7 @@ export default new Router({
             component: Login
         },
         {
-            path: '/category/:id/:slug',
+            path: '/category/:slug',
             name: 'category.show',
             component: Category,
         },
@@ -71,6 +73,16 @@ export default new Router({
             path: '/admin/posts',
             name: 'admin.posts',
             component: AdminPosts
+        },
+        {
+            path: 'admin/posts/create',
+            name: 'admin.posts.create',
+            component: CreatePost,
+        },
+        {
+            path: 'admin/posts/update/:slug',
+            name: 'admin.posts.update',
+            component: UpdatePost,
         },
         {
             path: '*',
