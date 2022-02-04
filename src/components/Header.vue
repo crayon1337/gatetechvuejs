@@ -18,7 +18,13 @@
             <router-link class="nav-link" :to="{name: 'login'}" active-class="active" v-if="!this.$store.getters['0/authenticated']">Login</router-link>
             <router-link class="nav-link" :to="{name: 'register'}" active-class="active" v-if="!this.$store.getters['0/authenticated']">Register</router-link>
             <router-link class="nav-link" :to="{name: 'settings'}" active-class="active" v-if="this.$store.getters['0/authenticated']">Settings</router-link>
-            <router-link class="nav-link" :to="{name: 'dashboard'}" active-class="active" v-if="this.$store.getters['0/authenticated'] && this.$store.getters['0/user'].isAdmin">Dashboard</router-link>
+            <li class="dropdown" v-if="this.$store.getters['0/authenticated'] && this.$store.getters['0/user'].isAdmin"><a href="#"><span>Dashboard</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><router-link :to="{ name: 'admin.users' }">Users</router-link></li>
+                <li><router-link :to="{ name: 'admin.categories' }">Categories</router-link></li>
+                <li><router-link :to="{ name: 'admin.posts' }">Posts</router-link></li>
+              </ul>
+            </li>
             <li><a class="nav-link" @click="logout" v-if="this.$store.getters['0/authenticated']">Logout</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>

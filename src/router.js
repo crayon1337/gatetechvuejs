@@ -3,10 +3,14 @@ import Router from 'vue-router'
 import Home from "@/components/Home";
 import Register from "@/components/Auth/Register";
 import Login from "@/components/Auth/Login";
-import Category from '@/components/Category/Show.vue'
+import Category from '@/components/Category/Show'
 import Post from '@/components/Post/Show.vue'
 import Settings from "@/components/Misc/Settings";
-import Dashboard from "@/components/Misc/Dashboard";
+import Users from "@/components/Dashboard/Users";
+import AdminCategories from '@/components/Dashboard/Categories/Index';
+import CreateCategory from '@/components/Dashboard/Categories/Create';
+import UpdateCategory from '@/components/Dashboard/Categories/Update';
+import AdminPosts from '@/components/Dashboard/Posts/Index';
 import NotFound from "@/components/Misc/NotFound";
 
 Vue.use(Router)
@@ -29,7 +33,7 @@ export default new Router({
             component: Login
         },
         {
-            path: '/category/:slug',
+            path: '/category/:id/:slug',
             name: 'category.show',
             component: Category,
         },
@@ -44,9 +48,29 @@ export default new Router({
             component: Settings
         },
         {
-            path: '/dashboard',
-            name: 'dashboard',
-            component: Dashboard
+            path: '/admin/users',
+            name: 'admin.users',
+            component: Users
+        },
+        {
+            path: '/admin/categories',
+            name: 'admin.categories',
+            component: AdminCategories
+        },
+        {
+            path: 'admin/categories/create',
+            name: 'admin.categories.create',
+            component: CreateCategory,
+        },
+        {
+            path: 'admin/categories/update/:slug',
+            name: 'admin.categories.update',
+            component: UpdateCategory,
+        },
+        {
+            path: '/admin/posts',
+            name: 'admin.posts',
+            component: AdminPosts
         },
         {
             path: '*',
