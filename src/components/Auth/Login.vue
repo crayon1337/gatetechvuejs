@@ -72,6 +72,7 @@ export default {
       this.processing = true
       await axios.get('http://127.0.0.1:8000/sanctum/csrf-cookie')
       await axios.post('http://127.0.0.1:8000/api/user/login', this.form).then(({data}) => {
+        this.$toaster.success(data.message)
         this.signIn(data)
       }).catch((error) => {
         if(error.response.status === 422)

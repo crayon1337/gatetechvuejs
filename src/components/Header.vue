@@ -14,10 +14,11 @@
             <li><a class="nav-link scrollto" href="#about">About</a></li>
             <li><a class="nav-link scrollto" href="#categories">Categories</a></li>
             <li><a class="nav-link scrollto " href="#posts">Posts</a></li>
-            <li><a class="nav-link scrollto " href="#members">Members</a></li>
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
             <router-link class="nav-link" :to="{name: 'login'}" active-class="active" v-if="!this.$store.getters['0/authenticated']">Login</router-link>
             <router-link class="nav-link" :to="{name: 'register'}" active-class="active" v-if="!this.$store.getters['0/authenticated']">Register</router-link>
+            <router-link class="nav-link" :to="{name: 'settings'}" active-class="active" v-if="this.$store.getters['0/authenticated']">Settings</router-link>
+            <router-link class="nav-link" :to="{name: 'dashboard'}" active-class="active" v-if="this.$store.getters['0/authenticated'] && this.$store.getters['0/user'].isAdmin">Dashboard</router-link>
             <li><a class="nav-link" @click="logout" v-if="this.$store.getters['0/authenticated']">Logout</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
@@ -50,7 +51,7 @@ export default {
         this.signOut()
         this.$toaster.success(data.message)
         this.$router.push({name: 'home'})
-      }).catch(({error}) => {
+      }).catch((error) => {
         this.$toaster.error(error)
       })
     }
