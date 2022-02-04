@@ -16,8 +16,9 @@
             <li><a class="nav-link scrollto " href="#posts">Posts</a></li>
             <li><a class="nav-link scrollto " href="#members">Members</a></li>
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-            <router-link class="nav-link" :to="{name: 'login'}" active-class="active">Login</router-link>
-            <router-link class="nav-link" :to="{name: 'register'}" active-class="active">Register</router-link>
+            <router-link class="nav-link" :to="{name: 'login'}" active-class="active" v-if="!this.$store.getters['0/authenticated']">Login</router-link>
+            <router-link class="nav-link" :to="{name: 'register'}" active-class="active" v-if="!this.$store.getters['0/authenticated']">Register</router-link>
+            <li><a class="nav-link" @click="logout" v-if="this.$store.getters['0/authenticated']">Logout</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -28,8 +29,32 @@
 </template>
 
 <script>
+import axios from 'axios'
+import {mapActions} from 'vuex'
+
 export default {
   name: "Header",
+
+  methods: {
+    ...mapActions({
+      signOut: '0/logout'
+    }),
+
+    async logout() {
+      await axios.create({
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': 'Bearer ' + this.$store.getters['0/user'].token,
+        },
+      }).post('http://127.0.0.1:8000/api/user/logout', this.$store.getters['0/user'].id).then(({data}) => {
+        this.signOut()
+        this.$toaster.success(data.message)
+        this.$router.push({name: 'home'})
+      }).catch(({error}) => {
+        this.$toaster.error(error)
+      })
+    }
+  }
 }
 </script>
 

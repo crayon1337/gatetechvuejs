@@ -5,11 +5,14 @@ import router from './router.js'
 import Toaster from 'v-toaster'
 import 'v-toaster/dist/v-toaster.css'
 
+import store from './store'
+
 Vue.use(Toaster, {time: 5000})
 
 Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store: store,
 }).$mount('#app')

@@ -449,10 +449,6 @@ import Categories from "@/components/Categories";
 
 export default {
   name: "Home",
-  components: {Categories}
+  components: {Categories},
 }
 </script>
-
-<style scoped>
-
-</style>
