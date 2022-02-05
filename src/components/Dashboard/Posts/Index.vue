@@ -72,7 +72,7 @@ export default {
 
   methods: {
     async loadPosts() {
-      await axios.get('http://127.0.0.1:8000/api/post/').then(({data}) => {
+      await axios.get(this.appConfig.BASE_URL +'/api/post/').then(({data}) => {
         this.posts = data.data
         console.log(this.posts)
       }).catch((error) => {
@@ -86,7 +86,7 @@ export default {
           'Accept': 'application/json',
           'Authorization': 'Bearer ' + this.$store.getters['0/user'].token,
         }
-      }).delete('http://127.0.0.1:8000/api/post/' + slug).then(({data}) => {
+      }).delete(this.appConfig.BASE_URL +'/api/post/' + slug).then(({data}) => {
         this.$toaster.success(data.message)
         this.loadPosts()
       }).catch((error) => {

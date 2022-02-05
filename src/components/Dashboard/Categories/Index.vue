@@ -68,7 +68,7 @@ export default {
 
   methods: {
     async loadCategories() {
-      await axios.get('http://127.0.0.1:8000/api/category/').then(({data}) => {
+      await axios.get(this.appConfig.BASE_URL +'/category/').then(({data}) => {
         this.categories = data.data
       }).catch((error) => {
         this.$toaster.error(error.response.statusText)
@@ -81,7 +81,7 @@ export default {
           'Accept': 'application/json',
           'Authorization': 'Bearer ' + this.$store.getters['0/user'].token,
         }
-      }).delete('http://127.0.0.1:8000/api/category/' + slug).then(({data}) => {
+      }).delete(this.appConfig.BASE_URL +'/api/category/' + slug).then(({data}) => {
         this.$toaster.success(data.message)
         this.Categories()
       }).catch((error) => {

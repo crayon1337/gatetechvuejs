@@ -95,7 +95,7 @@ export default {
       if(!this.form.terms)
         return this.$toaster.error('Please accept the terms & rules.')
 
-      axios.post('http://127.0.0.1:8000/api/user/register', this.form)
+      axios.post(this.appConfig.BASE_URL +'/api/user/register', this.form)
         .then((response) => {
 
           // Clear the forms & errors

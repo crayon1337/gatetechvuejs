@@ -21,13 +21,13 @@
                     <div class="row">
                       <div class="col form-group">
                         <input v-model="form.email" type="email" class="form-control" placeholder="Your Email*">
-                        <label v-if="form.errors.email">{{ errors.email.toString() }}</label>
+                        <label v-if="errors.email">{{ errors.email.toString() }}</label>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col form-group">
                         <input v-model="form.password" type="password" class="form-control" placeholder="Password*">
-                        <label v-if="form.errors.password">{{ errors.password.toString() }}</label>
+                        <label v-if="errors.password">{{ errors.password.toString() }}</label>
                       </div>
                     </div>
                     <button type="submit" class="btn btn-primary" @click="this.login">Submit</button>
@@ -57,8 +57,8 @@ export default {
       form: {
         email: '',
         password: '',
-        errors: {},
       },
+      errors: {},
       processing: false,
     }
   },
@@ -70,8 +70,8 @@ export default {
 
     async login() {
       this.processing = true
-      await axios.get('http://127.0.0.1:8000/sanctum/csrf-cookie')
-      await axios.post('http://127.0.0.1:8000/api/user/login', this.form).then(({data}) => {
+      await axios.get(this.appConfig.BASE_URL +'/sanctum/csrf-cookie')
+      await axios.post(this.appConfig.BASE_URL +'/api/user/login', this.form).then(({data}) => {
         this.$toaster.success(data.message)
         this.signIn(data)
       }).catch((error) => {

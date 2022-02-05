@@ -70,7 +70,7 @@ export default {
           'Accept': 'application/json',
           'Authorization': 'Bearer ' + this.$store.getters['0/user'].token,
         }
-      }).get('http://127.0.0.1:8000/api/users').then(({data}) => {
+      }).get(this.appConfig.BASE_URL +'/api/users').then(({data}) => {
         this.users = data.data
       }).catch((error) => {
         this.$toaster.error(error.response.statusText)
@@ -83,7 +83,7 @@ export default {
           'Accept': 'application/json',
           'Authorization': 'Bearer ' + this.$store.getters['0/user'].token,
         }
-      }).post('http://127.0.0.1:8000/api/user/' + id +'/makeAdmin').then(({data}) => {
+      }).post(this.appConfig.BASE_URL +'/api/user/' + id +'/makeAdmin').then(({data}) => {
         this.$toaster.success(data.message)
         this.loadUsers()
       }).catch((error) => {
@@ -97,7 +97,7 @@ export default {
           'Accept': 'application/json',
           'Authorization': 'Bearer ' + this.$store.getters['0/user'].token,
         }
-      }).delete('http://127.0.0.1:8000/api/user/' + id +'/delete').then(({data}) => {
+      }).delete(this.appConfig.BASE_URL +'/api/user/' + id +'/delete').then(({data}) => {
         this.$toaster.success(data.message)
         this.loadUsers()
       }).catch((error) => {

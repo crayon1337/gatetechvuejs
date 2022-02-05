@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     async loadCategory() {
-      await axios.get('http://127.0.0.1:8000/api/category/' + this.$route.params.slug).then(({data}) => {
+      await axios.get(this.appConfig.BASE_URL +'/api/category/' + this.$route.params.slug).then(({data}) => {
         this.category.name = data.category.name
         this.posts = data.posts.data
       }).catch(() => {

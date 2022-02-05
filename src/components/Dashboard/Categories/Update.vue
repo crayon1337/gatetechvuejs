@@ -81,7 +81,7 @@ export default {
           'Accept': 'application/json',
           'Authorization': 'Bearer ' + this.$store.getters['0/user'].token
         },
-      }).patch('http://127.0.0.1:8000/api/category/' + this.$route.params.id, this.category).then(({data}) => {
+      }).patch(this.appConfig.BASE_URL +'/api/category/' + this.$route.params.id, this.category).then(({data}) => {
         this.$toaster.success(data.message)
         router.push({name: 'admin.categories'})
       }).catch((error) => {
@@ -98,7 +98,7 @@ export default {
   },
 
   mounted() {
-    axios.get('http://127.0.0.1:8000/api/category/' + this.$route.params.slug).then(({data}) => {
+    axios.get(this.appConfig.BASE_URL +'/api/category/' + this.$route.params.slug).then(({data}) => {
       this.category = data.category
     }).catch((error) => {
       this.$toaster.error(error.response.statusText)

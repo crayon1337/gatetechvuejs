@@ -25,7 +25,7 @@ export default {
 
   methods: {
     async loadCategories() {
-      axios.get('http://127.0.0.1:8000/api/category').then(({data}) => {
+      axios.get(this.appConfig.BASE_URL + '/api/category').then(({data}) => {
         this.categories = data.data
       }).catch(() => {
         this.$toaster.error('Could not fetch the categories')

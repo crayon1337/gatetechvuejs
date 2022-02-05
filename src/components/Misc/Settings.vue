@@ -96,7 +96,7 @@ export default {
           'Accept': 'application/json',
           'Authorization': 'Bearer ' + token,
         }
-      }).post('http://127.0.0.1:8000/api/user/' + this.$store.getters['0/user'].id, this.form).then((data) => {
+      }).post(this.appConfig.BASE_URL +'/api/user/' + this.$store.getters['0/user'].id, this.form).then((data) => {
         this.$toaster.success(data.data.message)
         this.errors = {}
         this.reloadUserData(token)

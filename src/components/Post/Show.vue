@@ -57,7 +57,7 @@ export default {
 
   methods: {
     async loadPost() {
-      axios.get('http://127.0.0.1:8000/api/post/' + this.$route.params.slug).then(({data}) => {
+      axios.get(this.appConfig.BASE_URL +'/api/post/' + this.$route.params.slug).then(({data}) => {
         this.post = data
       }).catch(() => {
         this.$toaster.error('Could not get post')

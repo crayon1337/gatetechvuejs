@@ -50,7 +50,7 @@ export default {
           'Accept': 'application/json',
           'Authorization': 'Bearer ' + token
         }
-      }).get('http://127.0.0.1:8000/api/user').then(({data}) => {
+      }).get(this.appConfig.BASE_URL +'/api/user').then(({data}) => {
         commit('SET_USER', data)
         commit('SET_USER_TOKEN', token)
       }).catch(() => {

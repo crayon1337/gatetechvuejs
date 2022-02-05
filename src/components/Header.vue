@@ -53,7 +53,7 @@ export default {
           'Accept': 'application/json',
           'Authorization': 'Bearer ' + this.$store.getters['0/user'].token,
         },
-      }).post('http://127.0.0.1:8000/api/user/logout', this.$store.getters['0/user'].id).then(({data}) => {
+      }).post(this.appConfig.BASE_URL +'/api/user/logout', this.$store.getters['0/user'].id).then(({data}) => {
         this.signOut()
         this.$toaster.success(data.message)
         this.$router.push({name: 'home'})

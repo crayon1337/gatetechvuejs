@@ -81,7 +81,7 @@ export default {
           'Accept': 'application/json',
           'Authorization': 'Bearer ' + this.$store.getters['0/user'].token
         }
-      }).post('http://127.0.0.1:8000/api/category', this.form).then(({data}) => {
+      }).post(this.appConfig.BASE_URL +'/api/category', this.form).then(({data}) => {
         this.$toaster.success(data.message)
         router.push({name: 'admin.categories'})
       }).catch((error) => {

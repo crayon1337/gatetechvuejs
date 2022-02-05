@@ -105,7 +105,7 @@ export default {
           'Accept': 'application/json',
           'Authorization': 'Bearer ' + this.$store.getters['0/user'].token
         },
-      }).patch('http://127.0.0.1:8000/api/post/' + this.$route.params.id, this.post).then(({data}) => {
+      }).patch(this.appConfig.BASE_URL +'/api/post/' + this.$route.params.id, this.post).then(({data}) => {
         this.$toaster.success(data.message)
         router.push({name: 'admin.posts'})
       }).catch((error) => {
@@ -117,7 +117,7 @@ export default {
     },
 
     async loadCategories() {
-      await axios.get('http://127.0.0.1:8000/api/category').then(({data}) => {
+      await axios.get(this.appConfig.BASE_URL +'/api/category').then(({data}) => {
         this.categories = data.data;
       }).catch((error) => {
         this.$toaster.error(error.response.statusText)
@@ -130,7 +130,7 @@ export default {
   },
 
   mounted() {
-    axios.get('http://127.0.0.1:8000/api/post/' + this.$route.params.slug).then(({data}) => {
+    axios.get(this.appConfig.BASE_URL +'/api/post/' + this.$route.params.slug).then(({data}) => {
       this.post = data
     }).catch((error) => {
       this.$toaster.error(error.response.statusText)

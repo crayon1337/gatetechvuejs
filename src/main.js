@@ -4,8 +4,13 @@ import router from './router.js'
 
 import Toaster from 'v-toaster'
 import 'v-toaster/dist/v-toaster.css'
-
 import store from './store'
+
+// Import the configuration file
+import Config from './config.js'
+
+// Use the configuration file
+Vue.prototype.appConfig = Config
 
 Vue.use(Toaster, {time: 5000})
 
