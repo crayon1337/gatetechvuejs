@@ -57,15 +57,15 @@ export default new Router({
         {
             path: '/admin/categories',
             name: 'admin.categories',
-            component: AdminCategories
+            component: AdminCategories,
         },
         {
-            path: 'admin/categories/create',
+            path: '/admin/categories/create',
             name: 'admin.categories.create',
             component: CreateCategory,
         },
         {
-            path: 'admin/categories/update/:slug',
+            path: '/admin/categories/update/:slug',
             name: 'admin.categories.update',
             component: UpdateCategory,
         },
@@ -75,17 +75,17 @@ export default new Router({
             component: AdminPosts
         },
         {
-            path: 'posts/create',
+            path: '/posts/create',
             name: 'posts.create',
             component: CreatePost,
         },
         {
-            path: 'admin/posts/update/:slug',
+            path: '/admin/posts/update/:slug',
             name: 'admin.posts.update',
             component: UpdatePost,
         },
         {
-            path: '*',
+            path: '/*',
             name: '404',
             component: NotFound
         }
